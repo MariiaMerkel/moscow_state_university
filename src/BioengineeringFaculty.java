@@ -1,6 +1,6 @@
-public class BioengineeringFaculty {
-    nobility, honor and courage
+public class BioengineeringFaculty extends MoscowStateUniversity{
+    public BioengineeringFaculty(String name, String surName, int nobility, int honor, int bravery, int industriousness, int fidelity, int honesty, int wisdom, int wit, int creativity, int ingenuity, int determination, int leadership, int numeracy, int walking) {
+        super(name, surName, nobility, honor, bravery, industriousness, fidelity, honesty, wisdom, wit, creativity, ingenuity, determination, leadership, numeracy, walking);
+    }
+
 }
-//    Максим Григорьян
-//    Екатерина Гусева
-//    Даниил Бобровский
