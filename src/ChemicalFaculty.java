@@ -1,15 +1,22 @@
 public class ChemicalFaculty extends MoscowStateUniversity{
-    public ChemicalFaculty(String name, String surName, int nobility, int honor, int bravery, int industriousness, int fidelity, int honesty, int wisdom, int mind, int creativity, int ingenuity, int determination, int leadership, int numeracy, int walking) {
-        super(name, surName, nobility, honor, bravery, industriousness, fidelity, honesty, wisdom, mind, creativity, ingenuity, determination, leadership, numeracy, walking);
+    private final int wisdom;
+    private final int mind;
+    private final int creativity;
+
+    public ChemicalFaculty(String name, String surName, int numeracy, int walking, int wisdom, int mind, int creativity) {
+        super(name, surName, numeracy, walking);
+        this.wisdom = wisdom;
+        this.mind = mind;
+        this.creativity = creativity;
     }
     public void findBetter(ChemicalFaculty student) {
         if (this != student && student != null) {
             if (this.sumProperties() > student.sumProperties()) {
-                System.out.printf("%n%s имеет преимущества по способностям перед одногруппником %s.%n", this.getFullName(), student.getFullName());
+                System.out.printf("%s имеет преимущества по способностям перед одногруппником %s.%n", this.getFullName(), student.getFullName());
             } else if (this.sumProperties() == student.sumProperties()){
-                System.out.printf("%n%s и %s равносильны по способностям.%n", student.getFullName(), this.getFullName());
+                System.out.printf("%s и %s равносильны по способностям.%n", student.getFullName(), this.getFullName());
             } else {
-                System.out.printf("%n%s имеет преимущества по способностям перед одногруппником %s.%n", student.getFullName(), this.getFullName());
+                System.out.printf("%s имеет преимущества по способностям перед одногруппником %s.%n", student.getFullName(), this.getFullName());
             }
         } else {
             System.out.println("Введены некорректные данные");
@@ -18,5 +25,21 @@ public class ChemicalFaculty extends MoscowStateUniversity{
 
     public int sumProperties() {
         return this.getWisdom() + this.getMind() + this.getCreativity();
+    }
+
+    public int getWisdom() {
+        return wisdom;
+    }
+
+    public int getMind() {
+        return mind;
+    }
+
+    public int getCreativity() {
+        return creativity;
+    }
+    @Override
+    public String toString() {
+        return String.format("%s: мудрость - %d, ум - %d, творчество - %d", super.toString(), wisdom, mind, creativity);
     }
 }
